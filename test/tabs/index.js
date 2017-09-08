@@ -12,6 +12,8 @@ const dom = new JSDOM(HTML, {
 	resources: "usable"
 });
 
+require('localhost')('./components').listen(8080);
+
 module.exports = function() {
 
 	beforeEach(function(done) {

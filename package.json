@@ -23,7 +23,7 @@
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
-    "gulp-replace": "^0.6.1",
+    "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
     "jsdom": "^11.2.0",
     "localhost": "^0.2.2",
