@@ -1,5 +1,12 @@
-const Tabs = function() {
+(function() {
+	'use strict';
 
-};
+	window.Code = {};
 
-module.exports = Tabs;
+	window.Code.Tabs = function() {
+
+	};
+
+})();
+
+
