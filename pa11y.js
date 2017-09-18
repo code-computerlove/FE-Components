@@ -27,6 +27,7 @@ urls.forEach(url => {
 			process.exit(0);
 		}
 
+		console.log(chalk.green(`Succes: Pa11y tests have passed!`));
 
 	});
 });
