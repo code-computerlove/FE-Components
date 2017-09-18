@@ -2,9 +2,41 @@
 <html lang="en">
 	<head>
 		<title>Tabs component</title>
+		<link rel="stylesheet" href="http://localhost:8080/tabs/style.css" type="text/css"/>
 	</head>
 	<body>
-		<p>Hello world</p>
+		<h1 class="heading--primary">Tabs component</h1>
+		<div class="tabs" data-tabs>
+
+			<div class="tabs__header" role="tablist" aria-label="Lorem Ipsum Title">
+				<button class="tabs__button tabs__button--active" role="tab" type="button" id="button-one" aria-selected="true" aria-controls="button-one-tab" data-tabs-button="0">
+					Hello
+				</button>
+				<button class="tabs__button" role="tab" type="button" id="button-two" aria-selected="false" aria-controls="button-two-tab" tabindex="-1" data-tabs-button="1">
+					World
+				</button>
+			</div>
+			<div class="tabs__panel tabs__panel--active" role="tabpanel" aria-labelledby="button-one" id="button-one-tab" tabindex="0" data-tabs-panel="0">
+				<article>
+					<header>
+						<h2>Hello Panel 1</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+						</p>
+					</header>
+				</article>
+			</div>
+			<div class="tabs__panel" role="tabpanel" aria-labelledby="button-two" id="button-two-tab" tabindex="0" data-tabs-panel="1">
+				<article>
+					<header>
+						<h2>Hello Panel 2</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+						</p>
+					</header>
+				</article>
+			</div>
+		</div>
 		<script src="http://localhost:8080/tabs/tabs.js"></script>
 	</body>
 </html>
