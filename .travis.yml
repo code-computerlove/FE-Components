@@ -6,6 +6,6 @@ node_js:
   - "7"
   - "6.11.1"
 before_script:
-  - gulp build
+  - "gulp build"
 script:
   - "npm test"
