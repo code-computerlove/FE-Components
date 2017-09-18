@@ -6,6 +6,7 @@ node_js:
   - "7"
   - "6.11.1"
 before_script:
+	- "surge token"
   - "gulp build"
 script:
   - "npm test"
