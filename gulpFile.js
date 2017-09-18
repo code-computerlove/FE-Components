@@ -27,8 +27,10 @@ gulp.task('scripts', () => {
 
 gulp.task('surge', [], function () {
   return surge({
-    project: './build',
-    domain: 'code-computerlove-fe-components.surge.sh'
+		project: './build',
+		email: 'matt.claffey@codecomputerlove.com',
+		domain: 'code-computerlove-fe-components.surge.sh',
+		token: '0c8ff62cc885a267b038e5aa2a4d6020'
   });
 });
 
