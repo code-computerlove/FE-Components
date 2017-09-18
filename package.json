@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && node ./pa11y.js",
+		"test": "mocha && node ./pa11y.js",
+		"build": "gulp build",
     "serve": "localhost ./components"
   },
   "repository": {
