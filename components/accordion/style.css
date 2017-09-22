@@ -1,0 +1,89 @@
+/***
+
+-------------
+	Accordion Component
+-------------
+
+Includes:
+
+- No-js fallback styles
+***/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--c-primary: #0066fd;
+	--c-secondary: #b9d2e5;
+	--c-tertiary: #f8f9fb;
+	--c-white: #ffffff;
+}
+
+body {
+	font-family: 'Helvectica Neue', 'Arial';
+	font-size: 1em;
+}
+
+.accordion {
+	margin: 40px auto;
+	max-width: 600px;
+	padding: 20px;
+}
+
+.accordion__title {
+	margin-bottom: 20px;
+}
+
+.accordion__controls {
+	margin: 0;
+	list-style: none;
+}
+
+.accordion__section {
+	margin-bottom: 10px;
+}
+
+.accordion__button {
+	background-color: var(--c-tertiary);
+	border: 0;
+	cursor: pointer;
+	padding: 10px;
+	text-align: left;
+	transition: background-color .2s ease-in-out;
+	width: 100%;
+}
+
+.accordion__button:focus,
+.accordion__button:hover {
+	background-color: var(--c-secondary);
+	outline: 0;
+}
+
+.accordion__button--active,
+.accordion__button--active:focus,
+.accordion__button--active:hover {
+	background-color: var(--c-primary);
+	color: var(--c-white);
+}
+
+.accordion__content {
+	display: none;
+	height: 0;
+	overflow: hidden;
+	transition: height .2s ease-in-out;
+}
+
+.accordion__content-inner {
+	padding: 10px;
+}
+
+.no-js .accordion__content {
+	display: block;
+	height: auto;
+}
+
+.accordion__content--open {
+	display: block;
+}
