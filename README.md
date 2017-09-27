@@ -15,7 +15,7 @@
 
 ## Creating new components
 
-I have already made a base component which is located in the `components` folder & the test enviroment is setup in the `test` folder. 
+Located in the components folder is a predefined base. A sample test can be found in the test folder. Any additional tests can also be run from here.
 
 ```
 - Components
@@ -47,11 +47,11 @@ The W3C states that this component should have keyboard functionality:
 
 ## Testing Enviroment
 
-We are using Mocha to write the tests & we create the enviroment using JSDom.
+This project uses Mocha to write the tests & it creates the enviroment using JSDOM.
 
 ### Mocha/JSDOM tests
 
-We have one main file where all of the tests are run. In the `test` folder, there is a `index.js` file in the root. This spins up a localhost and runs the tests that get required into this file.
+The project has one main file where all of the tests run. In the `test` folder, there is a `index.js` file in the root. This spins up a localhost and runs the tests that get required into this file.
 
 Example:
 
@@ -60,7 +60,7 @@ require('localhost')('./components').listen(8080);
 const component = require('./component/index')();
 ```
 
-We need localhost to run so when we create an JSDOM enviroment we can download the scripts that we need in the HTML files to run the tests.
+The localhost module is needed so the assets from the HTML files can be accessed by JSDOM.
 
 Example of a `test/component/index.js` file:
 
@@ -78,7 +78,7 @@ const HTML = fs.readFileSync(path.resolve('components', 'base', 'index.html')).t
 
 let dom;
 ```
-In each describe we create a new JSDOM enviroment and hook a load event to the window before we start running our tests. The reaosn why we have to do this is because JSDOM does not wait for render blocking scripts before it runs its tests. All JS files are treated as `async` files so the best approach we found was to just run the tests on the load event. 
+In each describe function, a new JSDOM enviroment is created. Once created, hook a load event to the window before the tests start running. JSDOM does not wait for render blocking scripts before it runs tests. All JS files are treated as `async` files so the best approach was to just run the tests on the load event. 
 
 ```js
 module.exports = function() {
@@ -104,12 +104,10 @@ module.exports = function() {
 ```
 
 ### Adding Pa11y Tests
-When the build has done all files get pushed up to the `code-computerlove-fe-components.surge.sh` domain. Once pushed we need to add the url to `urls` array in the `./pa11y.js` file.
+When the build has done all files get pushed up to the `code-computerlove-fe-components.surge.sh` domain. Once pushed, add the url to `urls` array in the `./pa11y.js` file.
 
 ```js
 const urls = [
   'http://code-computerlove-fe-components.surge.sh/base/index.html'
 ];
 ```
-
-Once added if you do an `npm test` the Pa11y module will run a audit on that domain. 
