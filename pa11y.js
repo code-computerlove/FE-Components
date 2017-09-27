@@ -4,7 +4,8 @@ const chalk = require('chalk');
 const test = pa11y();
 
 const urls = [
-	'http://code-computerlove-fe-components.surge.sh/tabs/index.html'
+	'http://code-computerlove-fe-components.surge.sh/tabs/index.html',
+	'http://code-computerlove-fe-components.surge.sh/accordion/index.html',
 ];
 
 
@@ -27,7 +28,7 @@ urls.forEach(url => {
 			process.exit(0);
 		}
 
-		console.log(chalk.green(`Succes: Pa11y tests have passed!`));
+		console.log(chalk.green(`Succes: Pa11y tests have passed for ${url}!`));
 
 	});
 });

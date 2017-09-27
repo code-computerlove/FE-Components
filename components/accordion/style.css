@@ -23,7 +23,7 @@ Includes:
 
 body {
 	font-family: 'Helvectica Neue', 'Arial';
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 .accordion {
@@ -33,6 +33,7 @@ body {
 }
 
 .accordion__title {
+	font-size: 3rem;
 	margin-bottom: 20px;
 }
 
@@ -49,6 +50,7 @@ body {
 	background-color: var(--c-tertiary);
 	border: 0;
 	cursor: pointer;
+	font-size: 2rem;
 	padding: 10px;
 	text-align: left;
 	transition: background-color .2s ease-in-out;

@@ -20,23 +20,15 @@
 
 		function animateOpenHeight(section) {
 			const height = getOffsetHeight(section.querySelector('[data-accordion-content-wrapper]'));
-
-			setTimeout(function() {
-				section.setAttribute(`style`, `height: ${height}px;`);
-				clearTimeout(this);
-			}, 200);
+			section.setAttribute(`style`, `height: ${height}px;`);
 		}
 
 		function delayCloseClass(section) {
-			setTimeout(function() {
-				section.classList.remove(ACTIVE_SECTION);
-				clearTimeout(this);
-			}, 200);
 		}
 
 		function closeSection(section) {
 			section.setAttribute(`style`, `height: 0px;`);
-			delayCloseClass(section);
+			section.classList.remove(ACTIVE_SECTION);
 		}
 
 		function removeActiveButtonState(button) {
@@ -81,4 +73,6 @@
 
 		buttons.forEach(button => button.addEventListener('click', handleAccordionToggle));
 	};
+
+	new window.Code.Accordion(document.querySelector('[data-accordion]'));
 }());

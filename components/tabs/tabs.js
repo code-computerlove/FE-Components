@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	window.Code = {};
+	window.Code = window.Code || {};
 
 	window.Code.Tabs = function(component) {
 		'use strict';
@@ -120,7 +120,6 @@
 	var tabs = document.querySelector('[data-tabs]');
 
 	new window.Code.Tabs(tabs);
-
 })();
 
 
