@@ -8,9 +8,10 @@
 
 ## Tasks
 
-- `npm run serve` - Spins up a `localhost:8080`
-- `npm run test` - Runs the mocha tests & runs a Pa11y audit on `code-computerlove-fe-components.surge.sh`
-- `gulp build` - used on the travis ci to push code to the surge domain.
+- `npm run serve` - Spins up a `localhost:8080` to prototype your components. It points at the component folder so all folders in components act as a path on the url. 
+- `npm run test` - Runs the mocha tests & runs a Pa11y audit on `code-computerlove-fe-components.surge.sh`. Gulp is not required to run the tests as the test uses the ES6 version of the code. 
+- `gulp` - converts JS from ES6 to ES5 using Babel. 
+- `gulp build` - travis ci to push code to the surge domain.
 
 ## Creating new components
 
