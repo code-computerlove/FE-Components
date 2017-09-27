@@ -10,7 +10,6 @@
 
 - `npm run serve` - Spins up a `localhost:8080`
 - `npm run test` - Runs the mocha tests & runs a Pa11y audit on `code-computerlove-fe-components.surge.sh`
-- `gulp` - throws the js assets into dist
 - `gulp build` - used on the travis ci to push code to the surge domain.
 
 ## Creating new components
