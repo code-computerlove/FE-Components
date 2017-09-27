@@ -1,0 +1,26 @@
+/***
+
+-------------
+Component
+-------------
+
+Includes:
+
+***/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--c-primary: #0066fd;
+	--c-secondary: #b9d2e5;
+	--c-tertiary: #f8f9fb;
+	--c-white: #ffffff;
+}
+
+body {
+	font-family: 'Helvectica Neue', 'Arial';
+	font-size: 1rem;
+}
