@@ -1,7 +1,7 @@
 # Tabs Component
-This component demonstrates a tab widget that follows the format of the [W3 Tabs Example](https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html).
-
+This component demonstrates a tab widget that follows the format of the [W3 Tabs Example](https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html). 
 ## Keyboard Support
+> Note: Tests are located in ./test/tabs/index.js
 
 This component has keyboard support of the following:
 
@@ -20,6 +20,7 @@ This component has keyboard support of the following:
   - Moves focus to the first tab (JS)
 - **End** 
   - Moves focus to the last tab (JS)
+
 
 ## Role, Property, State and TabIndex Attributes
 
@@ -57,7 +58,11 @@ Finally the button should have a `aria-controls="ID-of-tab-panel"` so it can be 
 ```
 
 ### Tab Panel
-Each tab panel needs to have the `aria-role` of `tabpanel`. It needs to have the `aria-labelledby="id-of-tab-button"` so when the focus is active on the tab panel the button text will act as a title for that section. Setting `tabindex="0"` on the tab panel will automatically give the div the ability to be focused on. This ticks off the `When When the tab list contains the focus, moves focus to the next element in the tab sequence which is the tab panel.` criteria. In our example we use a css class to set the display of `tabs__panel` to `block` when it has the `tabs__panel--active`. The other tabpanels will not have focus as they are set to `display: none;` by default. `no-js` class on the html parent will display all tabpanels.
+Each tab panel needs to have the `aria-role` of `tabpanel`. It needs to have the `aria-labelledby="id-of-tab-button"` so when the focus is active on the tab panel the button text will act as a title for that section. 
+
+Setting `tabindex="0"` on the tab panel will automatically give the div the ability to be focused on. This ticks off the `When When the tab list contains the focus, moves focus to the next element in the tab sequence which is the tab panel.` criteria. 
+
+In our example we use a css class to set the display of `tabs__panel` to `block` when it has the `tabs__panel--active`. The other tabpanels will not have focus as they are set to `display: none;` by default. `no-js` class on the html parent will display all tabpanels.
 
 ```html
 
