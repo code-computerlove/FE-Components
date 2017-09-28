@@ -25,7 +25,7 @@ This component has keyboard support of the following:
 ## Role, Property, State and TabIndex Attributes
 
 ### Tab List
-The parent element of the tab buttons should have an `aria-role="tablist"`.
+The parent element of the tab buttons should have an `role="tablist"`.
 
 ```html
 <div class="tabs__header" role="tablist">
@@ -41,7 +41,7 @@ The parent element should have an `aria-label` to decribe the purpose of the set
 </div>
 ```
 ### Tab Button
-The button that represents the tab should have a `aria-role="tab"`.This not only serves as a `tab control` but it will provide a title for its associated `tabpanel`.
+The button that represents the tab should have a `role="tab"`.This not only serves as a `tab control` but it will provide a title for its associated `tabpanel`.
 
 When the button is active is needs the attribute of `aria-selected="true"`.If it is not active then `aria-selected="false"`.
 
@@ -58,7 +58,7 @@ Finally the button should have a `aria-controls="ID-of-tab-panel"` so it can be 
 ```
 
 ### Tab Panel
-Each tab panel needs to have the `aria-role` of `tabpanel`. It needs to have the `aria-labelledby="id-of-tab-button"` so when the focus is active on the tab panel the button text will act as a title for that section. 
+Each tab panel needs to have the `role` of `tabpanel`. It needs to have the `aria-labelledby="id-of-tab-button"` so when the focus is active on the tab panel the button text will act as a title for that section. 
 
 Setting `tabindex="0"` on the tab panel will automatically give the div the ability to be focused on. This ticks off the `When When the tab list contains the focus, moves focus to the next element in the tab sequence which is the tab panel.` criteria. 
 
