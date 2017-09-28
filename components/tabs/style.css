@@ -37,7 +37,7 @@ body {
 
 .container {
 	margin: 100px auto;
-	width: 30em;
+	max-width: 30em;
 }
 
 .tabs {
