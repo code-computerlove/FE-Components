@@ -114,6 +114,8 @@
 			element.addEventListener('click', handleClickEvent);
 		});
 
+		addActiveElement();
+
 		return {
 			setActiveElements: setActiveElements
 		};
@@ -123,7 +125,7 @@
 	var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
 
 	tabs.forEach(element => {
-		var newTabs = new window.Code.Tabs(tabs);
+		var newTabs = new window.Code.Tabs(element);
 	});
 })();
 
