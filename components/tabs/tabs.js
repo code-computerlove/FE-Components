@@ -17,10 +17,10 @@
 		};
 
 		const keyboardHandlers = {
-			ArrowRight: handleArrowRightEvent,
-			ArrowLeft: handleArrowLeftEvent,
-			Home: goToFirstTab,
-			End: goToLastTab
+			'39': handleArrowRightEvent,
+			'37': handleArrowLeftEvent,
+			'36': goToFirstTab,
+			'35': goToLastTab
 		};
 
 		const activeElements = {
@@ -101,8 +101,9 @@
 		}
 
 		function keyboardHandler(event) {
-			if(keyboardHandlers.hasOwnProperty(event.code)) {
-				keyboardHandlers[event.code](event.currentTarget);
+			if(keyboardHandlers.hasOwnProperty(event.keyCode)) {
+				event.preventDefault();
+				keyboardHandlers[event.keyCode](event.currentTarget);
 			}
 		}
 
