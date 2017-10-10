@@ -25,7 +25,6 @@
 
 		function setFocusToElement(element) {
 			element.focus();
-			console.log(document.activeElement);
 		}
 
 		function handleBackwardsTab(event) {
@@ -74,6 +73,7 @@
 		}
 
 		function handleClickEvent(event) {
+			event.preventDefault();
 			!isModalOpen() ? showModal(event.currentTarget) : closeModal();
 		}
 
