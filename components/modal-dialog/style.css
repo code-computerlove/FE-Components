@@ -15,6 +15,7 @@ Includes:
 
 :root {
 	--c-primary: #0066fd;
+	--c-primary-dark: #0152C4;
 	--c-secondary: #b9d2e5;
 	--c-tertiary: #f8f9fb;
 	--c-white: #ffffff;
@@ -75,4 +76,46 @@ p {
 .no-js .modal:target,
 .no-js .modal:target + .modal__overlay {
 	display: block;
+}
+
+
+.button {
+	appearance: none;
+	-webkit-appearance: none;
+	background-color: var(--c-primary);
+	border: 0;
+	border-bottom: 3px solid var(--c-primary-dark);
+	display: inline-block;
+	color: var(--c-white);
+	padding: 10px 20px;
+	text-decoration: none;
+	text-align: center;
+	transition: border-bottom .3s linear;
+	-webkit-transition: border-bottom .3s linear;
+	-moz-transition: border-bottom .3s linear;
+	-ms-transition: border-bottom .3s linear;
+}
+
+.button:hover,
+.button:focus {
+	border-bottom-width: 2px;
+}
+
+
+
+.links {
+	display: block;
+	padding: 15px 5px;
+	text-decoration: none;
+}
+
+.links:focus,
+.links:hover {
+	color: var(--c-primary);
+	text-decoration: underline;
+}
+
+.modal__button {
+	display: block;
+	margin-top: 15px;
 }
