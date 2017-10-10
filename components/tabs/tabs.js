@@ -7,8 +7,8 @@
 		'use strict';
 
 		const selectors = {
-			buttons: component.querySelectorAll('[data-tabs-button]'),
-			panels: component.querySelectorAll('[data-tabs-panel]')
+			buttons: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-button]')),
+			panels: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-panel]'))
 		};
 
 		const states = {
@@ -30,12 +30,14 @@
 
 		function removeActiveElement() {
 			activeElements.button.setAttribute('tabindex', '-1');
+			activeElements.button.setAttribute('aria-selected', 'false');
 			activeElements.button.classList.remove(states.buttonActive);
 			activeElements.panel.classList.remove(states.panelActive);
 		}
 
 		function addActiveElement() {
 			activeElements.button.setAttribute('tabindex', '0');
+			activeElements.button.setAttribute('aria-selected', 'true');
 			activeElements.button.classList.add(states.buttonActive);
 			activeElements.button.focus();
 			activeElements.panel.classList.add(states.panelActive);
@@ -118,9 +120,11 @@
 
 	};
 
-	var tabs = document.querySelector('[data-tabs]');
+	var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
 
-	new window.Code.Tabs(tabs);
+	tabs.forEach(element => {
+		var newTabs = new window.Code.Tabs(tabs);
+	});
 })();
 
 
