@@ -43,6 +43,14 @@ We also need to add the data attribute `data-modal-toggle`. The data attribute n
 </a>
 ```
 
+## Modal overlay
+
+Even though we have the escape key to leave the modal we also have the ability to leave the modal if you click on the overlay. To do this add `data-modal-toggle="myModal"` onto the overlay element.
+
+```html
+<div class="modal__overlay" data-modal-toggle="modalWindow"></div>
+```
+
 ## CSS
 
 ```css
