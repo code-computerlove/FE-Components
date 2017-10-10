@@ -237,7 +237,7 @@ module.exports = function() {
 
 			const tabComponents = new dom.window.Code.Tabs(tabs);
 
-			const Click = new dom.window.KeyboardEvent('click', { });
+			const Click = new dom.window.MouseEvent('click', { });
 
 			buttons[1].dispatchEvent(Click);
 

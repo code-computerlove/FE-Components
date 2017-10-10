@@ -1,0 +1,78 @@
+/***
+
+-------------
+Component
+-------------
+
+Includes:
+
+***/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--c-primary: #0066fd;
+	--c-secondary: #b9d2e5;
+	--c-tertiary: #f8f9fb;
+	--c-white: #ffffff;
+}
+
+body {
+	font-family: 'Helvectica Neue', 'Arial';
+	font-size: 1rem;
+}
+
+.container {
+	margin: 40px auto;
+	max-width: 600px;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 3rem;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+.modal__overlay {
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+}
+
+.modal {
+	background: white;
+	border-radius: 5px;
+	display: none;
+	left: 50%;
+	padding: 20px;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	z-index: 3;
+}
+
+.modal--open,
+.modal--open + .modal__overlay,
+.no-js .modal:target,
+.no-js .modal:target + .modal__overlay {
+	display: block;
+}

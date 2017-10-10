@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex,nofollow,noodp">
+		<title>Component</title>
+		<link rel="stylesheet" href="http://localhost:8080/modal-dialog/style.css" type="text/css"/>
+	</head>
+	<body>
+		<main class="container">
+			<h1>Modal JS</h1>
+			<p>A simple yet accessible Modal window</p>
+
+			<a href="#modalWindow" class="button" role="button" data-modal-toggle="modalWindow">
+				Read More
+			</a>
+		</main>
+
+
+		<div class="modal" data-modal="" id="modalWindow" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogText">
+			<h2 id="dialogTitle">Hello World Modal</h2>
+			<p id="dialogText">This is my amazing modal!</p>
+			<a href="#">Test Link One</a>
+			<a href="#">Test Link Two</a>
+			<a href="#">Test Link Three</a>
+			<a href="#" class="button" role="button" data-modal-toggle="modalWindow">Close</a>
+		</div>
+		<div class="modal__overlay" data-modal-toggle="modalWindow"></div>
+		<script src="http://localhost:8080/modal-dialog/modal-dialog.js"></script>
+	</body>
+</html>
