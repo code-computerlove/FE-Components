@@ -36,7 +36,7 @@ module.exports = function() {
 			new dom.window.Code.Tabs(tabs);
 
 			// Create stub events
-			const ArrowRight = new dom.window.KeyboardEvent('keyup', { keyCode: 39, code: 'ArrowRight' });
+			const ArrowRight = new dom.window.KeyboardEvent('keydown', { keyCode: 39, code: 'ArrowRight' });
 
 			activeTab.dispatchEvent(ArrowRight);
 
@@ -62,7 +62,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const ArrowRight = new dom.window.KeyboardEvent('keyup', { keyCode: 39, code: 'ArrowRight' });
+			const ArrowRight = new dom.window.KeyboardEvent('keydown', { keyCode: 39, code: 'ArrowRight' });
 
 			activeButtonTab.dispatchEvent(ArrowRight);
 
@@ -87,7 +87,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const ArrowRight = new dom.window.KeyboardEvent('keyup', { keyCode: 39, code: 'ArrowRight' });
+			const ArrowRight = new dom.window.KeyboardEvent('keydown', { keyCode: 39, code: 'ArrowRight' });
 
 			activeButtonTab.dispatchEvent(ArrowRight);
 
@@ -115,7 +115,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const ArrowLeft = new dom.window.KeyboardEvent('keyup', { keyCode: 37, code: 'ArrowLeft' });
+			const ArrowLeft = new dom.window.KeyboardEvent('keydown', { keyCode: 37, code: 'ArrowLeft' });
 
 			activeButtonTab.dispatchEvent(ArrowLeft);
 
@@ -141,7 +141,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const ArrowLeft = new dom.window.KeyboardEvent('keyup', { keyCode: 37, code: 'ArrowLeft' });
+			const ArrowLeft = new dom.window.KeyboardEvent('keydown', { keyCode: 37, code: 'ArrowLeft' });
 
 			activeButtonTab.dispatchEvent(ArrowLeft);
 
@@ -165,7 +165,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const ArrowLeft = new dom.window.KeyboardEvent('keyup', { keyCode: 37, code: 'ArrowLeft' });
+			const ArrowLeft = new dom.window.KeyboardEvent('keydown', { keyCode: 37, code: 'ArrowLeft' });
 
 			activeButtonTab.dispatchEvent(ArrowLeft);
 
@@ -191,7 +191,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const HomeKey = new dom.window.KeyboardEvent('keyup', { keyCode: 37, code: 'Home' });
+			const HomeKey = new dom.window.KeyboardEvent('keydown', { keyCode: 37, code: 'Home' });
 
 			activeButtonTab.dispatchEvent(HomeKey);
 
@@ -215,7 +215,7 @@ module.exports = function() {
 
 			tabComponents.setActiveElements(activeButtonTab, activeTabPanel);
 
-			const EndKey = new dom.window.KeyboardEvent('keyup', { keyCode: 35, code: 'End' });
+			const EndKey = new dom.window.KeyboardEvent('keydown', { keyCode: 35, code: 'End' });
 
 			activeButtonTab.dispatchEvent(EndKey);
 

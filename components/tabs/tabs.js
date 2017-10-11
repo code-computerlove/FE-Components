@@ -110,7 +110,7 @@
 		}
 
 		selectors.buttons.forEach(element => {
-			element.addEventListener('keyup', keyboardHandler);
+			element.addEventListener('keydown', keyboardHandler);
 			element.addEventListener('click', handleClickEvent);
 		});
 
