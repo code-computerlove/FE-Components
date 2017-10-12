@@ -19,6 +19,7 @@ Includes:
 	--c-secondary: #b9d2e5;
 	--c-tertiary: #f8f9fb;
 	--c-white: #ffffff;
+	--spacing: 20px;
 }
 
 body {
@@ -26,9 +27,33 @@ body {
 	font-size: 1rem;
 }
 
+h1 {
+	border-bottom: 1px solid var(--c-tertiary);
+	font-size: 5rem;
+	padding-bottom: calc(var(--spacing) * 0.75);
+}
+
+p {
+	line-height: 1.4;
+}
+
+p, ul, h1 {
+	margin-bottom: var(--spacing);
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 65ch;
+	padding: calc(var(--spacing) * 2) 0;
+}
+
 .accordion__section {
-	background: none;
-	padding: 0;
+	border-radius: 3px;
+	line-height: 1.4;
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: var(--spacing);
+	padding: calc(var(--spacing) / 2);
 }
 
 .accordion__toggler {
