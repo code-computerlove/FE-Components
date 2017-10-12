@@ -29,7 +29,7 @@ body {
 
 h1 {
 	border-bottom: 1px solid var(--c-tertiary);
-	font-size: 5rem;
+	font-size: 3rem;
 	padding-bottom: calc(var(--spacing) * 0.75);
 }
 
