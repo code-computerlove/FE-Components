@@ -11,23 +11,25 @@
 	<body>
 		<div class="accordion">
 			<h1 class="accordion__title">Accordion</h1>
-			<ul aria-label="Accordion Control Group Buttons" class="accordion__controls" data-accordion>
+			<ul class="accordion" aria-label="Hello World Accordion" data-accordion>
 				<li class="accordion__section">
-					<button aria-controls="content-1" aria-expanded="false" id="accordion-control-1" class="accordion__button" data-accordion-button>Button 1</button>
-					<div class="accordion__content" id="content-1" data-accordion-section>
-						<div class="accordion__content-inner" data-accordion-content-wrapper>
-							<p>Hello World</p>
-						</div>
+					<button class="accordion__toggler" aria-expanded="false" aria-controls="item1" data-accordion-button>Item One</button>
+					<div class="accordion__content-area" id="item1" aria-hidden="true" data-accordion-content-area>
+						Hello World Content One
 					</div>
 				</li>
 				<li class="accordion__section">
-						<button aria-controls="content-2" aria-expanded="false" id="accordion-control-2" class="accordion__button" data-accordion-button>Button 2</button>
-						<div class="accordion__content" id="content-2" data-accordion-section>
-							<div class="accordion__content-inner" data-accordion-content-wrapper>
-								<p>Hello World</p>
-							</div>
-						</div>
-					</li>
+					<button class="accordion__toggler" aria-expanded="false" aria-controls="item2" data-accordion-button>Item Two</button>
+					<div class="accordion__content-area" id="item2" aria-hidden="true" data-accordion-content-area>
+						Hello World Content Two
+					</div>
+				</li>
+				<li class="accordion__section">
+					<button class="accordion__toggler" aria-expanded="false" aria-controls="item3" data-accordion-button>Item Three</button>
+					<div class="accordion__content-area" id="item3" aria-hidden="true" data-accordion-content-area>
+						Hello World Content Three
+					</div>
+				</li>
 			</ul>
 		</div>
 
