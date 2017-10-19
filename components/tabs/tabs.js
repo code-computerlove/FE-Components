@@ -114,8 +114,6 @@
 			element.addEventListener('click', handleClickEvent);
 		});
 
-		addActiveElement();
-
 		return {
 			setActiveElements: setActiveElements
 		};
