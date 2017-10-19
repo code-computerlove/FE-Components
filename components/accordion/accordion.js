@@ -28,6 +28,7 @@
 		}
 
 		function toggleAccordion(event) {
+			event.preventDefault();
 			const activeButton = event.currentTarget;
 			const activeContentArea = activeButton.parentNode.querySelector('[data-accordion-content-area]');
 

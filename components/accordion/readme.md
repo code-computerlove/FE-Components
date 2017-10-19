@@ -15,13 +15,13 @@ Here is a list of guidelines we have followed to write our tests.
 ```html
 <ul class="accordion" aria-label="Hello World Accordion" data-accordion>
   <li class="accordion__section">
-    <button class="accordion__toggler" aria-expanded="false" aria-controls="item1" data-accordion-button>Item One</button>
+    <a href="#item1" class="accordion__toggler" aria-expanded="false" aria-controls="item1" data-accordion-button>Item One</a>
     <div class="accordion__content-area" id="item1" aria-hidden="true" data-accordion-content-area>
       Hello World Content One
     </div>
   </li>
   <li class="accordion__section">
-    <button class="accordion__toggler" aria-expanded="false" aria-controls="item2" data-accordion-button>Item Two</button>
+    <a href="#item2" class="accordion__toggler" aria-expanded="false" aria-controls="item2" data-accordion-button>Item Two</a>
     <div class="accordion__content-area" id="item2" aria-hidden="true" data-accordion-content-area>
       Hello World Content Two
     </div>
