@@ -1,6 +1,11 @@
 (function() {
 	'use strict';
 
+	const states = {
+		buttonActive: 'tabs__button--active',
+		panelActive: 'tabs__panel--active'
+	};
+
 	window.Code = window.Code || {};
 
 	window.Code.Tabs = function(component) {
@@ -9,11 +14,6 @@
 		const selectors = {
 			buttons: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-button]')),
 			panels: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-panel]'))
-		};
-
-		const states = {
-			buttonActive: 'tabs__button--active',
-			panelActive: 'tabs__panel--active'
 		};
 
 		const keyboardHandlers = {
