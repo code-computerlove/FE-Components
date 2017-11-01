@@ -57,15 +57,23 @@
 			return parseInt(activeElements.button.getAttribute(attributes.button));
 		}
 
+		function setFirstElementActive() {
+			setActiveElements(selectors.buttons[0], selectors.panels[0]);
+		}
+
+		function setLastElementActive() {
+			setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+		}
+
 		function goToFirstTab() {
 			removeActiveElement();
-			setActiveElements(selectors.buttons[0], selectors.panels[0]);
+			setFirstElementActive();
 			addActiveElement();
 		}
 
 		function goToLastTab() {
 			removeActiveElement();
-			setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+			setLastElementActive();
 			addActiveElement();
 		}
 
@@ -75,7 +83,7 @@
 			removeActiveElement();
 
 			if(currentIndex === 0) {
-				setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+				setLastElementActive();
 			} else {
 				currentIndex--;
 				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
@@ -90,7 +98,7 @@
 			removeActiveElement();
 
 			if(currentIndex === selectors.buttons.length - 1) {
-				setActiveElements(selectors.buttons[0], selectors.panels[0]);
+				setFirstElementActive();
 			} else {
 				currentIndex++;
 				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
