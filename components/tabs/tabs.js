@@ -6,14 +6,19 @@
 		panelActive: 'tabs__panel--active'
 	};
 
+	const attributes = {
+		button: 'data-tabs-button',
+		panel: 'data-tabs-panel',
+	};
+
 	window.Code = window.Code || {};
 
 	window.Code.Tabs = function(component) {
 		'use strict';
 
 		const selectors = {
-			buttons: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-button]')),
-			panels: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-panel]'))
+			buttons: Array.prototype.slice.call(component.querySelectorAll(`[${attributes.button}]`)),
+			panels: Array.prototype.slice.call(component.querySelectorAll(`[${attributes.panel}]`))
 		};
 
 		const keyboardHandlers = {
@@ -49,7 +54,7 @@
 		}
 
 		function getCurrentIndex() {
-			return parseInt(activeElements.button.getAttribute('data-tabs-button'));
+			return parseInt(activeElements.button.getAttribute(attributes.button));
 		}
 
 		function goToFirstTab() {
@@ -73,11 +78,10 @@
 				setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
 			} else {
 				currentIndex--;
-				setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
 			}
 
 			addActiveElement();
-
 		}
 
 		function handleArrowRightEvent(element) {
@@ -89,16 +93,16 @@
 				setActiveElements(selectors.buttons[0], selectors.panels[0]);
 			} else {
 				currentIndex++;
-				setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
 			}
 
 			addActiveElement();
 		}
 
 		function handleClickEvent(event) {
-			const currentIndex = parseInt(event.currentTarget.getAttribute('data-tabs-button'));
+			const currentIndex = parseInt(event.currentTarget.getAttribute(attributes.button));
 			removeActiveElement();
-			setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+			setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
 			addActiveElement();
 		}
 
