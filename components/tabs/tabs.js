@@ -91,7 +91,7 @@
 		}
 
 		function handleArrowLeftEvent(element) {
-			var currentIndex = getCurrentIndex();
+			let currentIndex = getCurrentIndex();
 
 			removeActiveElement();
 
@@ -106,7 +106,7 @@
 		}
 
 		function handleArrowRightEvent(element) {
-			var currentIndex = getCurrentIndex();
+			let currentIndex = getCurrentIndex();
 
 			removeActiveElement();
 
@@ -145,10 +145,10 @@
 
 	};
 
-	var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
+	const tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
 
 	tabs.forEach(element => {
-		var newTabs = new window.Code.Tabs(element);
+		const newTabs = new window.Code.Tabs(element);
 	});
 })();
 
