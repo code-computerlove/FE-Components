@@ -53,16 +53,29 @@
 			activeElements.panel = panel;
 		}
 
+		function setElementsForIndexActive(index) {
+			setActiveElements(
+				component.querySelector(`[${attributes.button}="${index}"]`),
+				component.querySelector(`[${attributes.panel}="${index}"]`)
+			);
+		}
+
 		function getCurrentIndex() {
 			return parseInt(activeElements.button.getAttribute(attributes.button));
 		}
 
 		function setFirstElementActive() {
-			setActiveElements(selectors.buttons[0], selectors.panels[0]);
+			setActiveElements(
+				selectors.buttons[0],
+				selectors.panels[0]
+			);
 		}
 
 		function setLastElementActive() {
-			setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+			setActiveElements(
+				selectors.buttons[selectors.buttons.length - 1],
+				selectors.panels[selectors.panels.length - 1]
+			);
 		}
 
 		function goToFirstTab() {
@@ -86,7 +99,7 @@
 				setLastElementActive();
 			} else {
 				currentIndex--;
-				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
+				setElementsForIndexActive(currentIndex);
 			}
 
 			addActiveElement();
@@ -101,7 +114,7 @@
 				setFirstElementActive();
 			} else {
 				currentIndex++;
-				setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
+				setElementsForIndexActive(currentIndex);
 			}
 
 			addActiveElement();
@@ -110,7 +123,7 @@
 		function handleClickEvent(event) {
 			const currentIndex = parseInt(event.currentTarget.getAttribute(attributes.button));
 			removeActiveElement();
-			setActiveElements(component.querySelector(`[${attributes.button}="${currentIndex}"]`), component.querySelector(`[${attributes.panel}="${currentIndex}"]`));
+			setElementsForIndexActive(currentIndex);
 			addActiveElement();
 		}
 
