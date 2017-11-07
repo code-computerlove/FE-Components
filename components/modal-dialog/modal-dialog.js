@@ -79,11 +79,14 @@
 			addModalClass();
 			setFocusToElement(focusableElements[0]);
 			previousFocusedElement = currentTarget;
+			document.body.addEventListener('keydown', handleEscapeKeyEvent);
 		}
 
 		function closeModal() {
 			removeModalClass();
 			setFocusToElement(previousFocusedElement);
+			document.body.removeEventListener('keydown', handleEscapeKeyEvent);
+
 		}
 
 		function handleClickEvent(event) {
@@ -93,7 +96,6 @@
 
 		function bindFocusEvents() {
 			focusableElements.forEach(element => { element.addEventListener('keydown', handleKeyDownEvents); });
-			document.body.addEventListener('keydown', handleEscapeKeyEvent);
 		}
 
 		function init() {
