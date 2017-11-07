@@ -19,8 +19,12 @@
 			return component.classList.contains('modal--open');
 		}
 
-		function toggleModalClass() {
-			component.classList.toggle('modal--open');
+		function addModalClass() {
+			component.classList.add('modal--open');
+		}
+
+		function removeModalClass() {
+			component.classList.remove('modal--open');
 		}
 
 		function setFocusToElement(element) {
@@ -52,7 +56,7 @@
 
 		function handleKeyDownEvents(event) {
 			const keyCodes = {
-				'27': toggleModalClass,
+				'27': closeModal,
 				'9': keyBoardTrapModal
 			};
 
@@ -63,7 +67,7 @@
 
 		function handleEscapeKeyEvent(event) {
 			const keyCodes = {
-				'27': toggleModalClass
+				'27': closeModal
 			};
 
 			if(keyCodes.hasOwnProperty(event.keyCode) && isModalOpen()) {
@@ -72,13 +76,13 @@
 		}
 
 		function showModal(currentTarget) {
-			toggleModalClass();
+			addModalClass();
 			setFocusToElement(focusableElements[0]);
 			previousFocusedElement = currentTarget;
 		}
 
 		function closeModal() {
-			toggleModalClass();
+			removeModalClass();
 			setFocusToElement(previousFocusedElement);
 		}
 
