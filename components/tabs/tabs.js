@@ -1,19 +1,24 @@
 (function() {
 	'use strict';
 
+	const states = {
+		buttonActive: 'tabs__button--active',
+		panelActive: 'tabs__panel--active'
+	};
+
+	const attributes = {
+		button: 'data-tabs-button',
+		panel: 'data-tabs-panel',
+	};
+
 	window.Code = window.Code || {};
 
 	window.Code.Tabs = function(component) {
 		'use strict';
 
 		const selectors = {
-			buttons: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-button]')),
-			panels: Array.prototype.slice.call(component.querySelectorAll('[data-tabs-panel]'))
-		};
-
-		const states = {
-			buttonActive: 'tabs__button--active',
-			panelActive: 'tabs__panel--active'
+			buttons: Array.prototype.slice.call(component.querySelectorAll(`[${attributes.button}]`)),
+			panels: Array.prototype.slice.call(component.querySelectorAll(`[${attributes.panel}]`))
 		};
 
 		const keyboardHandlers = {
@@ -48,57 +53,77 @@
 			activeElements.panel = panel;
 		}
 
+		function setElementsForIndexActive(index) {
+			setActiveElements(
+				component.querySelector(`[${attributes.button}="${index}"]`),
+				component.querySelector(`[${attributes.panel}="${index}"]`)
+			);
+		}
+
 		function getCurrentIndex() {
-			return parseInt(activeElements.button.getAttribute('data-tabs-button'));
+			return parseInt(activeElements.button.getAttribute(attributes.button));
+		}
+
+		function setFirstElementActive() {
+			setActiveElements(
+				selectors.buttons[0],
+				selectors.panels[0]
+			);
+		}
+
+		function setLastElementActive() {
+			setActiveElements(
+				selectors.buttons[selectors.buttons.length - 1],
+				selectors.panels[selectors.panels.length - 1]
+			);
 		}
 
 		function goToFirstTab() {
 			removeActiveElement();
-			setActiveElements(selectors.buttons[0], selectors.panels[0]);
+			setFirstElementActive();
 			addActiveElement();
 		}
 
 		function goToLastTab() {
 			removeActiveElement();
-			setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+			setLastElementActive();
 			addActiveElement();
 		}
 
 		function handleArrowLeftEvent(element) {
-			var currentIndex = getCurrentIndex();
+			let currentIndex = getCurrentIndex();
 
 			removeActiveElement();
 
 			if(currentIndex === 0) {
-				setActiveElements(selectors.buttons[selectors.buttons.length - 1], selectors.panels[selectors.panels.length - 1]);
+				setLastElementActive();
 			} else {
 				currentIndex--;
-				setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+				setElementsForIndexActive(currentIndex);
 			}
 
 			addActiveElement();
-
 		}
 
 		function handleArrowRightEvent(element) {
-			var currentIndex = getCurrentIndex();
+			let currentIndex = getCurrentIndex();
 
 			removeActiveElement();
 
 			if(currentIndex === selectors.buttons.length - 1) {
-				setActiveElements(selectors.buttons[0], selectors.panels[0]);
+				setFirstElementActive();
 			} else {
 				currentIndex++;
-				setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+				setElementsForIndexActive(currentIndex);
 			}
 
 			addActiveElement();
 		}
 
 		function handleClickEvent(event) {
-			const currentIndex = parseInt(event.currentTarget.getAttribute('data-tabs-button'));
+			const currentIndex = parseInt(event.currentTarget.getAttribute(attributes.button));
 			removeActiveElement();
-			setActiveElements(component.querySelector(`[data-tabs-button="${currentIndex}"]`), component.querySelector(`[data-tabs-panel="${currentIndex}"]`));
+			setElementsForIndexActive(currentIndex);
 			addActiveElement();
 		}
 
@@ -120,10 +145,10 @@
 
 	};
 
-	var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
+	const tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs]'));
 
 	tabs.forEach(element => {
-		var newTabs = new window.Code.Tabs(element);
+		const newTabs = new window.Code.Tabs(element);
 	});
 })();
 
