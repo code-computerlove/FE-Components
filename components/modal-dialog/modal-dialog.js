@@ -61,6 +61,16 @@
 			}
 		}
 
+		function handleEscapeKeyEvent(event) {
+			const keyCodes = {
+				'27': toggleModalClass
+			};
+
+			if(keyCodes.hasOwnProperty(event.keyCode) && isModalOpen()) {
+				keyCodes[event.keyCode](event);
+			}
+		}
+
 		function showModal(currentTarget) {
 			toggleModalClass();
 			setFocusToElement(focusableElements[0]);
@@ -77,10 +87,14 @@
 			!isModalOpen() ? showModal(event.currentTarget) : closeModal();
 		}
 
+		function bindFocusEvents() {
+			focusableElements.forEach(element => { element.addEventListener('keydown', handleKeyDownEvents); });
+			document.body.addEventListener('keydown', handleEscapeKeyEvent);
+		}
+
 		function init() {
 			modalToggle.forEach(element => element.addEventListener('click', handleClickEvent));
-
-			document.body.addEventListener('keydown', handleKeyDownEvents);
+			bindFocusEvents();
 		}
 
 		init();
