@@ -151,7 +151,7 @@ Here is a basic example of how this would work:
 
   if(modal !== null) {
     ModalInstance = new Modal(element);
-    newModal.init();
+    ModalInstance.init();
   }
 	
 }(window.Code.ModalDialog));
