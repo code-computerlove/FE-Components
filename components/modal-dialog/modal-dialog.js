@@ -86,7 +86,6 @@
 			removeModalClass();
 			setFocusToElement(previousFocusedElement);
 			document.body.removeEventListener('keydown', handleEscapeKeyEvent);
-
 		}
 
 		function handleClickEvent(event) {
