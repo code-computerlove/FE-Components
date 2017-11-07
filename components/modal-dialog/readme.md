@@ -88,6 +88,76 @@ Even though we have the escape key to leave the modal we also have the ability t
 }
 ```
 
+## Note: How to handle new elements that get added to the modal
+
+Adding new elements to the modal will break the keyboard trap fucntionality. Here is my work around this bug.
+
+Make a function that unbinds all the current elements that are currently bound to the modal. Example: a close button. This is something that would just sit in the modal at all times. We dont want the bind a keydown event to the button more than once. What we need is an unbind function.
+
+```js
+function unbindFocusEvents() {
+  focusableElements.forEach(element => { element.removeEventListener('keydown', handleKeyDownEvents); });
+}
+```
+
+Once the function is added, create the reset function. What this function will do is it will:
+
+- Unbind the current focus elements
+- Reset the focusableElements, firstFocusableEl & lastFocusableEl 
+- Bind the new focusableElements
+
+This is how that would look:
+
+```js
+function resetFocusableElements() {
+
+  unbindFocusEvents();
+
+  focusableElements = Array.prototype.slice.call(component.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'));
+  firstFocusableEl  = focusableElements[0];
+  lastFocusableEl = focusableElements[focusableElements.length - 1];
+
+  bindFocusEvents();
+}
+```
+
+The final step we need to take is to make this function public so when a new html gets added to the modal we can call the reset after.
+
+```js
+return {
+  init: init,
+  resetFocusableElements: resetFocusableElements
+};
+```
+
+Here is a basic example of how this would work:
+
+```js
+(function(Modal) {
+  'use strict';
+
+  const modal = document.querySelector(`[data-modal="myModal"]`);
+	let ModalInstance = null;
+
+  const buttons = Array.prototype.slice.call(document.querySelectorAll(`[data-modal-toggle]`));
+
+  function populateHTML() {
+		// some innerHTML stuff
+		var html = `<a href="/path/to/somewhere">Hello World</a>`
+    ModalInstance.resetFocusableElements();
+  }
+
+  buttons.forEach(button => { button.addEventListener('click', populateHTML) });
+
+  if(modal !== null) {
+    ModalInstance = new Modal(element);
+    newModal.init();
+  }
+	
+}(window.Code.ModalDialog));
+
+```
+
 ## Resources 
 - [Demo Example](http://code-computerlove-fe-components.surge.sh/modal-dialog/)
 - [Creating an accessible modal](https://bitsofco.de/accessible-modal-dialog/)
