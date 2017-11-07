@@ -102,11 +102,16 @@
 			bindFocusEvents();
 		}
 
-		init();
+		return {
+			init: init
+		};
 	};
 
 	// you dont need this bit.
 	const elements = Array.prototype.slice.call(document.querySelectorAll(`[data-modal]`));
 
-	elements.forEach(element => { const newModal = new window.Code.ModalDialog(element); });
+	elements.forEach(element => {
+		const newModal = new window.Code.ModalDialog(element);
+		newModal.init();
+	});
 }());
