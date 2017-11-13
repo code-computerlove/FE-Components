@@ -132,6 +132,7 @@
 			alertLiveRegion();
 			bindEvents();
 			bindWindowEvents();
+			calcHeightOfCarousel();
 		}
 
 		return {
