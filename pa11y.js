@@ -7,6 +7,7 @@ const urls = [
 	'http://code-computerlove-fe-components.surge.sh/tabs/index.html',
 	'http://code-computerlove-fe-components.surge.sh/accordion/index.html',
 	'http://code-computerlove-fe-components.surge.sh/modal-dialog/index.html',
+	'http://code-computerlove-fe-components.surge.sh/carousel/index.html',
 ];
 
 

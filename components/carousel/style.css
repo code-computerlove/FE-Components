@@ -1,0 +1,106 @@
+/***
+
+-------------
+Component
+-------------
+
+Includes:
+
+***/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--c-primary: #0066fd;
+	--c-secondary: #b9d2e5;
+	--c-tertiary: #f8f9fb;
+	--c-white: #ffffff;
+}
+
+body {
+	color: var(--c-white);
+	font-family: 'Helvectica Neue', 'Arial';
+	font-size: 1rem;
+}
+
+.carousel {
+	background-color: var(--c-primary);
+	position: relative;
+	width: 100%;
+}
+
+.carousel__wrapper {
+	list-style: none;
+	padding-top: 52.6%;
+	position: relative;
+	width: 100%;
+}
+
+.carousel__heading {
+	visibility: hidden;
+	overflow: hidden;
+	margin: 0;
+	width: 0;
+	height: 0;
+	padding: 0;
+}
+
+.carousel__slide {
+	font-size: 3em;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	transform: translateY(-50%);
+	text-align: center;
+	transition: opacity .2s linear;
+	top: 50%;
+	width: 100%;
+}
+
+.carousel__slide--active:focus {
+	outline: 0;
+}
+
+.carousel__slide--active {
+	opacity: 1;
+}
+
+.carousel__controls {
+	list-style: none;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+.carousel__controls-button {
+	appearance: none;
+	border: 0;
+	background: var(--c-white);
+	color: var(--c-primary);
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 1em;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.carousel__controls-button--prev {
+	left: 0;
+}
+
+.carousel__controls-button--next {
+	right: 0;
+}
+
+.carousel__liveregion {
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
