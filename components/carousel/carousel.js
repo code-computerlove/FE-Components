@@ -23,7 +23,14 @@
 		}
 
 		function calcHeightOfCarousel() {
-			carousel.style.height = `${activeSlide.offsetHeight}px`;
+			const image = activeSlide.querySelector(`.${options.bemClass}__image`);
+
+			if(image !== null) {
+				carousel.style.height = `${image.offsetHeight}px`;
+			} else {
+				carousel.style.height = `${activeSlide.offsetHeight}px`;
+			}
+
 		}
 
 		function alertLiveRegion() {
