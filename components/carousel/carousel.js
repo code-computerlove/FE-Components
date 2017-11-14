@@ -92,7 +92,7 @@
 
 		function setAriaHiddenToSlidesThatAreNotActive() {
 			Array.prototype.slice.call(slides)
-			.filter(slide => hasClass(slide, options.activeClass))
+			.filter(slide => !hasClass(slide, options.activeClass))
 			.forEach(slide => { slide.setAttribute('aria-hidden', true); });
 
 			activeSlide.setAttribute('aria-hidden', false);
